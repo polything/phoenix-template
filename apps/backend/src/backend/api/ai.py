@@ -60,6 +60,7 @@ def get_ai_service() -> AIService:
     
     return AIService(
         openai_api_key=settings.openai_api_key,
+        openrouter_api_key=settings.openrouter_api_key,
         langsmith_api_key=settings.langsmith_api_key,
         langsmith_project=settings.langsmith_project,
         model_name=settings.default_content_model,
@@ -84,7 +85,9 @@ async def get_ai_status():
             configured_models={
                 "default_content_model": settings.default_content_model,
                 "default_research_model": settings.default_research_model,
-                "temperature": str(settings.default_temperature)
+                "temperature": str(settings.default_temperature),
+                "service_type": ai_service.get_service_info()["service_type"],
+                "openrouter_configured": settings.openrouter_api_key is not None
             }
         )
     except Exception as e:
