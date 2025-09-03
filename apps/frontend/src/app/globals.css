@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --radius: 8px;
+  --background: #FFFFFF;
+  --foreground: #211D1D;
+  --card: #FFFFFF;
+  --card-foreground: #211D1D;
+  --popover: #FFFFFF;
+  --popover-foreground: #211D1D;
+  --primary: #BCBBFF;
+  --primary-foreground: #FFFFFF;
+  --secondary: #FAFAF9;
+  --secondary-foreground: #211D1D;
+  --muted: #F7F6F6;
+  --muted-foreground: #8F8E8E;
+  --accent: #E5E5FF;
+  --accent-foreground: #211D1D;
+  --destructive: #EF4444;
+  --border: #F1F1F0;
+  --input: #F1F1F0;
+  --ring: #BCBBFF;
+  --chart-1: #BCBBFF;
+  --chart-2: #1C4886;
+  --chart-3: #28D358;
+  --chart-4: #E5E5FF;
+  --chart-5: #EF4444;
+  --sidebar: #FAFAF9;
+  --sidebar-foreground: #211D1D;
+  --sidebar-primary: #BCBBFF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #F7F6F6;
+  --sidebar-accent-foreground: #211D1D;
+  --sidebar-border: #F1F1F0;
+  --sidebar-ring: #BCBBFF;
+}
+
+.dark {
+  /* Dark mode can be implemented later with appropriate dark variants */
+  /* For now, keeping the same light theme values */
+  --background: #211D1D;
+  --foreground: #FFFFFF;
+  --card: #636161;
+  --card-foreground: #FFFFFF;
+  --popover: #636161;
+  --popover-foreground: #FFFFFF;
+  --primary: #9898FF;
+  --primary-foreground: #211D1D;
+  --secondary: #636161;
+  --secondary-foreground: #FFFFFF;
+  --muted: #8F8E8E;
+  --muted-foreground: #FAFAF9;
+  --accent: #E5E5FF;
+  --accent-foreground: #211D1D;
+  --destructive: #EF4444;
+  --border: #8F8E8E;
+  --input: #8F8E8E;
+  --ring: #9898FF;
+  --chart-1: #9898FF;
+  --chart-2: #1C4886;
+  --chart-3: #28D358;
+  --chart-4: #E5E5FF;
+  --chart-5: #EF4444;
+  --sidebar: #636161;
+  --sidebar-foreground: #FFFFFF;
+  --sidebar-primary: #9898FF;
+  --sidebar-primary-foreground: #211D1D;
+  --sidebar-accent: #8F8E8E;
+  --sidebar-accent-foreground: #FFFFFF;
+  --sidebar-border: #8F8E8E;
+  --sidebar-ring: #9898FF;
+}
+
+@layer base {
+  * {
+    @apply border-[var(--border)] outline-[var(--ring)]/50;
+  }
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)];
+  }
+}

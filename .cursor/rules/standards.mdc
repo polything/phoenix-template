@@ -1,0 +1,12 @@
+---
+alwaysApply: true
+---
+
+# Rule: General Coding and Project Standards
+
+- **Design System First:** Always use components, styles, and tokens from the `/design-system` documentation. Propose new components before implementing them.
+- **Conventional Commits:** All git commit messages must follow the Conventional Commits specification (e.g., `feat:`, `fix:`, `docs:`, `style:`, `refactor:`, `test:`).
+- **Language Standards:**
+  - **Python:** Adhere to PEP 8 for styling. Use type hints for all function signatures.
+  - **TypeScript/TSX:** Adhere to the rules configured in our ESLint and Prettier setup.
+- **Clarity:** Use clear, descriptive names for variables, functions, and files. Add comments to explain complex or non-obvious logic.

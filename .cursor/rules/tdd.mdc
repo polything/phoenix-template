@@ -1,0 +1,11 @@
+---
+alwaysApply: true
+---
+# Rule: Test-Driven Development (TDD) Cycle
+## This is the primary development methodology.
+
+- **Plan First:** Always start by generating a step-by-step plan for the feature. Do not write code until the plan is approved.
+- **Red Phase:** Create or extend tests FIRST for the target function, component, or API endpoint. Run the tests and confirm they fail as expected.
+- **Green Phase:** Write the absolute minimum amount of application code required to make the failing tests pass.
+- **Refactor Phase:** After the tests are green, refactor the application code for clarity, performance, and adherence to standards. Ensure all tests still pass after refactoring.
+- **One thing at a time:** Focus only on the specific task. Do not refactor unrelated code.
