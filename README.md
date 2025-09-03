@@ -1,8 +1,8 @@
-# Phoenix Template
+# Project Phoenix
 
-**AI-Powered Full-Stack Application Template**
+**AI-Enhanced Autonomous Content Pipeline**
 
-A modern full-stack monorepo template featuring a FastAPI backend and Next.js frontend, built with modern development practices, comprehensive AI integration, and AI-assisted development workflows.
+A full-stack monorepo featuring a FastAPI backend and Next.js frontend, built with modern development practices and comprehensive AI-assisted development workflows.
 
 ## 🏗️ Architecture
 
@@ -26,36 +26,6 @@ This is a monorepo containing:
 └── snippets/             # Code snippets and examples
 ```
 
-## ✨ What's Included Out of the Box
-
-### 🤖 AI Integration
-- **LangChain Integration**: Ready-to-use AI service with OpenAI support
-- **LangSmith Tracing**: Built-in observability and debugging for AI operations
-- **Multiple AI Endpoints**: Text generation, data analysis, and chat completion
-- **Configurable Models**: Easy switching between different AI models
-- **Async AI Operations**: High-performance async AI processing
-
-### 🎨 Modern Frontend
-- **Next.js 15**: Latest Next.js with App Router
-- **TypeScript**: Full type safety throughout
-- **Tailwind CSS**: Utility-first styling with design system
-- **shadcn/ui**: Beautiful, accessible components
-- **Responsive Design**: Mobile-first, modern UI
-
-### ⚡ FastAPI Backend
-- **High Performance**: Async FastAPI with automatic API documentation
-- **Pydantic Models**: Type-safe data validation and serialization
-- **CORS Ready**: Pre-configured for frontend integration
-- **Health Checks**: Built-in monitoring endpoints
-- **Modular Architecture**: Clean separation of concerns
-
-### 🛠️ Development Experience
-- **Monorepo Structure**: Unified development workflow
-- **Hot Reload**: Instant development feedback
-- **Type Safety**: End-to-end TypeScript support
-- **AI Assistant Rules**: Comprehensive development guidelines
-- **Test-Driven Development**: TDD methodology built-in
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -64,7 +34,6 @@ This is a monorepo containing:
 - Python 3.9+
 - pnpm (package manager)
 - Poetry (Python dependency management)
-- OpenAI API key (for AI features)
 
 ### Development Setup
 
@@ -77,16 +46,7 @@ This is a monorepo containing:
    cd apps/backend && poetry install
    ```
 
-2. **Configure environment variables**:
-   ```bash
-   # Copy example environment file
-   cp apps/backend/env.example apps/backend/.env
-   
-   # Edit .env with your configuration
-   # Add your OpenAI API key for AI features
-   ```
-
-3. **Run development servers**:
+2. **Run development servers**:
    ```bash
    # Frontend (Next.js)
    cd apps/frontend && pnpm dev
@@ -94,11 +54,6 @@ This is a monorepo containing:
    # Backend (FastAPI)
    cd apps/backend && poetry run uvicorn src.backend.main:app --reload
    ```
-
-4. **Try the AI Demo**:
-   - Visit `http://localhost:3000`
-   - Use the AI Demo section to test LangChain integration
-   - Check the API docs at `http://localhost:8000/docs`
 
 ## 🤖 AI Assistant Rules & Guidelines
 
@@ -177,31 +132,12 @@ This project follows **Test-Driven Development (TDD)** as the primary methodolog
 - **Tailwind CSS**: Utility-first styling
 - **shadcn/ui**: Component library
 
-## 🎯 API Endpoints
-
-### Example CRUD Operations
-- `GET /api/example/items` - List all items
-- `POST /api/example/items` - Create new item
-- `GET /api/example/items/{id}` - Get specific item
-- `PUT /api/example/items/{id}` - Update item
-- `DELETE /api/example/items/{id}` - Delete item
-
-### AI Operations
-- `GET /api/ai/status` - Check AI service status
-- `POST /api/ai/generate` - Generate text with AI
-- `POST /api/ai/analyze` - Analyze data with AI
-- `POST /api/ai/chat` - Chat completion with AI
-
-### Health & Monitoring
-- `GET /api/health` - Health check endpoint
-- `GET /docs` - Interactive API documentation
-
 ## 📚 Documentation
 
 - **Architecture**: `docs/ARCHITECTURE.md`
-- **Tech Stack**: `docs/TECH_STACK.md`
 - **Design System**: `design-system/01-core-elements.md`
-- **API Documentation**: Auto-generated from FastAPI at `/docs`
+- **API Documentation**: Auto-generated from FastAPI
+- **Component Documentation**: Storybook (planned)
 
 ## 🤝 Contributing
 

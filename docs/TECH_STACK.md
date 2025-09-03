@@ -1,6 +1,6 @@
-# Phoenix Template: Technology Stack Documentation
+# Project Phoenix: Technology Stack Documentation
 
-This document provides an overview of the technologies, frameworks, and services used to build the Phoenix Template application. The stack was chosen to be modern, scalable, and highly productive, with a strong emphasis on supporting Test-Driven Development (TDD) workflow.
+This document provides an overview of the technologies, frameworks, and services used to build the Project Phoenix application. The stack was chosen to be modern, scalable, and highly productive, with a strong emphasis on supporting an AI-first, Test-Driven Development (TDD) workflow.
 
 ---
 ## Frontend
@@ -52,40 +52,48 @@ Our backend is built on Python, chosen for its mature AI/ML ecosystem and high-p
 ---
 ## Database & Data Layer
 
-We use a modern, flexible database solution that can be configured for different deployment scenarios.
+We use a unified, modern data platform that supports both traditional relational data and advanced vector search capabilities.
 
-### PostgreSQL
+### Supabase (PostgreSQL)
 
-* **Role**: Our primary database for storing application data.
-* **Rationale**: **PostgreSQL** provides a robust, feature-rich relational database with excellent performance and reliability. It supports JSON data types for flexible schema design and can be extended with additional functionality as needed.
+* **Role**: Our all-in-one backend-as-a-service platform, providing the core database.
+* **Rationale**: **Supabase** gives us a powerful, managed PostgreSQL database with a generous free tier. It also provides user authentication and file storage, which will be valuable for future features.
 * **Key Links**:
-    * **PostgreSQL Documentation**: [postgresql.org/docs](https://postgresql.org/docs)
+    * **Supabase Documentation**: [supabase.com/docs](https://supabase.com/docs)
 
-### Database Options
+### pgvector
 
-* **Local Development**: PostgreSQL running in Docker or locally installed
-* **Production**: Can be configured to use Supabase, AWS RDS, or other managed PostgreSQL services
-* **Extensions**: Support for pgvector and other PostgreSQL extensions when needed
+* **Role**: The PostgreSQL extension used for vector similarity search.
+* **Rationale**: By using **pgvector** directly within Supabase, we avoid the need for a separate, dedicated vector database. This simplifies our architecture and allows us to run powerful queries that combine traditional SQL filtering with semantic vector search.
+* **Key Links**:
+    * **Official GitHub Repository**: [github.com/pgvector/pgvector](https://github.com/pgvector/pgvector)
 
 ---
-## Optional AI & ML Integration
+## AI & Orchestration
 
-The template is designed to easily integrate AI and ML capabilities when needed.
+This is the core "brains" of our application, powered by a flexible and observable stack.
 
-### AI Integration Options
+### LangChain
 
-* **LangChain**: Framework for building AI applications with LLMs
-* **OpenAI API**: Direct integration with OpenAI's models
-* **Anthropic Claude**: Integration with Claude models
-* **Custom ML Models**: Support for deploying custom machine learning models
+* **Role**: The framework for building and connecting our AI pipeline stages.
+* **Rationale**: **LangChain** provides the essential tools and abstractions (Chains, Agents, Memory) needed to orchestrate complex workflows involving multiple calls to Large Language Models.
+* **Key Links**:
+    * **LangChain Python Documentation**: [python.langchain.com/docs/](https://python.langchain.com/docs/)
 
-### When to Add AI
+### LangSmith
 
-* Content generation and processing
-* Data analysis and insights
-* Natural language processing
-* Recommendation systems
-* Automated workflows
+* **Role**: Our platform for debugging, tracing, and monitoring the AI pipeline.
+* **Rationale**: **LangSmith** is purpose-built for observing LLM applications. It gives us invaluable, step-by-step visibility into our LangChain runs, turning our complex pipeline from a "black box" into a transparent system.
+* **Key Links**:
+    * **LangSmith Documentation**: [docs.smith.langchain.com](https://docs.smith.langchain.com/)
+
+### OpenRouter
+
+* **Role**: Our unified API gateway for accessing various LLMs.
+* **Rationale**: We chose **OpenRouter** to future-proof our application. It allows us to easily switch between different models from various providers without changing our code, enabling us to always use the best or most cost-effective model for each task.
+* **Key Links**:
+    * **OpenRouter Documentation**: [openrouter.ai/docs](https://openrouter.ai/docs)
+    * **Available Models**: [openrouter.ai/models](https://openrouter.ai/models)
 
 ---
 ## Tooling & Workflow

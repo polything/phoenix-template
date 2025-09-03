@@ -1,17 +1,43 @@
 """
-Models package for the Phoenix Template.
+Models package for the AI-Enhanced Autonomous Content Pipeline.
 """
 
-from .example import (
-    ExampleItem,
-    ExampleItemCreate,
-    ExampleItemUpdate,
-    ExampleItemResponse,
+from .client import (
+    ClientIntakeRequest,
+    ClientProfile,
+    ClientProfileUpdate,
+    ClientProfileResponse,
+    ClientListResponse,
+    ServiceOffering,
+    ICPProfile,
+    ContentPreferences,
+    ClientConstraints,
+    VoiceExample,
+    ProofAsset,
+    PricingTier,
+    BrandSafetyLevel,
+    ClientStatus,
+    Platform,
+    ContentType,
+    AssetType,
 )
 
 __all__ = [
-    "ExampleItem",
-    "ExampleItemCreate",
-    "ExampleItemUpdate",
-    "ExampleItemResponse",
+    "ClientIntakeRequest",
+    "ClientProfile",
+    "ClientProfileUpdate", 
+    "ClientProfileResponse",
+    "ClientListResponse",
+    "ServiceOffering",
+    "ICPProfile",
+    "ContentPreferences",
+    "ClientConstraints",
+    "VoiceExample",
+    "ProofAsset",
+    "PricingTier",
+    "BrandSafetyLevel",
+    "ClientStatus",
+    "Platform",
+    "ContentType",
+    "AssetType",
 ]

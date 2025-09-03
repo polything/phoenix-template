@@ -1,13 +1,13 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.api.example import router as example_router
+from backend.api.clients import router as clients_router
 from backend.api.health import router as health_router
-from backend.api.ai import router as ai_router
+from backend.api.pipeline import router as pipeline_router
 
 app = FastAPI(
-    title="Phoenix Template API",
-    description="Backend API for the Phoenix Template application",
+    title="AI-Enhanced Autonomous Content Pipeline API",
+    description="Backend API for the Project Phoenix content generation system",
     version="1.0.0",
     docs_url="/docs",
     redoc_url="/redoc"
@@ -23,14 +23,14 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(example_router)
+app.include_router(clients_router)
 app.include_router(health_router)
-app.include_router(ai_router)
+app.include_router(pipeline_router)
 
 @app.get("/")
 def read_root():
     return {
-        "message": "Phoenix Template API",
+        "message": "AI-Enhanced Autonomous Content Pipeline API",
         "version": "1.0.0",
         "docs": "/docs"
     }

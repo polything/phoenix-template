@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import ExampleForm from "@/components/ExampleForm";
-import ExampleList from "@/components/ExampleList";
-import AIDemo from "@/components/AIDemo";
+import ClientIntakeForm from "@/components/ClientIntakeForm";
+import ContentGenerator from "@/components/ContentGenerator";
 
 export default function Home() {
-  const [refreshKey, setRefreshKey] = useState(0);
+  const [clientId, setClientId] = useState<string>("");
+  const [showContentGenerator, setShowContentGenerator] = useState(false);
 
-  const handleItemSuccess = (_id: string) => {
-    // Trigger a refresh of the list
-    setRefreshKey(prev => prev + 1);
+  const handleFormSuccess = (clientId: string) => {
+    setClientId(clientId);
+    setShowContentGenerator(true);
   };
 
   return (
@@ -18,18 +18,20 @@ export default function Home() {
       <div className="container mx-auto px-4 py-8">
         <header className="text-center mb-12">
           <h1 className="font-headline text-4xl font-bold text-gray-900 mb-4">
-            Phoenix Template
+            AI-Enhanced Content Pipeline
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            A modern full-stack application template with FastAPI backend and Next.js frontend. 
-            Built with TypeScript, Tailwind CSS, and modern development practices.
+            Transform your content strategy with AI-powered automation. 
+            Get started by telling us about your business.
           </p>
         </header>
         
         <main className="max-w-4xl mx-auto space-y-8">
-          <AIDemo />
-          <ExampleForm onSuccess={handleItemSuccess} />
-          <ExampleList key={refreshKey} />
+          {!showContentGenerator ? (
+            <ClientIntakeForm onSuccess={handleFormSuccess} />
+          ) : (
+            <ContentGenerator clientId={clientId} />
+          )}
         </main>
       </div>
     </div>
